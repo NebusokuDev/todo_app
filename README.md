@@ -1,16 +1,20 @@
 # todo_app
 
-A new Flutter project.
+flutterとriverpodで作成された、シンプルなTODOアプリ.
+
+## 特徴
+- riverpodを使用しています
+- riverpodの理解を深めるために作成しました。
 
 ## Getting Started
+このアプリを動かすには以下の手順を踏んでください。
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+このリポジトリをクローンします
+```text
+git clone git@github.com:NebusokuDev/todo_app.git
+```
+クローンしたディレクトリに移動し`flutter run`をします。
+```text
+cd ./todo_app
+flutter run
+```

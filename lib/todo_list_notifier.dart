@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:todo_app/todo.dart';
 
@@ -7,7 +5,6 @@ part 'todo_list_notifier.g.dart';
 
 @riverpod
 class TodoListNotifier extends _$TodoListNotifier {
-  
   @override
   List<Todo> build() {
     return [];

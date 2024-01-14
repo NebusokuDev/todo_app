@@ -19,4 +19,17 @@ class Todo {
       isComplete: isComplete ?? this.isComplete,
     );
   }
+
+  dynamic toJson() {
+    return {
+      "id": id,
+      "title": title,
+      "detail": detail,
+      "isComplete": isComplete
+    };
+  }
+
+  Todo fromJson(Map<String, dynamic> json) {
+    return Todo(id: id, title: title, detail: detail, isComplete: isComplete);
+  }
 }

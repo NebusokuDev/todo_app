@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_app/pages/main_page.dart';
-import 'package:todo_app/theme_mode_notifier.dart';
+import 'package:todo_app/provider/theme_mode_notifier.dart';
+import 'package:todo_app/theme_data.dart';
+import 'package:todo_app/view/main_page.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -11,9 +12,9 @@ class App extends ConsumerWidget {
     final themeMode = ref.watch(themeModeNotifierProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      themeMode: themeMode,
+      theme: Brightness.light.theme,
+      darkTheme: Brightness.dark.theme,
+      themeMode: themeMode.value,
       home: const MainPage(),
     );
   }

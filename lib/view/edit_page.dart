@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_app/todo.dart';
-import 'package:todo_app/todo_list_notifier.dart';
+import 'package:todo_app/model/todo.dart';
+import 'package:todo_app/provider/todo_list_notifier.dart';
 
 class EditPage extends ConsumerWidget {
   const EditPage({super.key, required this.editData});
@@ -10,17 +10,12 @@ class EditPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final todo = ref
-        .watch(todoListNotifierProvider)
-        .firstWhere((element) => editData.id == element.id);
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
-          constraints: const BoxConstraints(maxWidth: 500, minWidth: 0),
+        title: IntrinsicWidth(
           child: TextFormField(
-            initialValue: todo.title,
+            initialValue: editData.title,
             onChanged: (value) {
               ref
                   .read(todoListNotifierProvider.notifier)
@@ -29,6 +24,7 @@ class EditPage extends ConsumerWidget {
             maxLines: 1,
             textAlign: TextAlign.center,
             decoration: const InputDecoration(
+              suffixIcon: Icon(Icons.edit),
               border: InputBorder.none,
             ),
           ),
@@ -44,7 +40,7 @@ class EditPage extends ConsumerWidget {
                 width: double.infinity,
                 height: double.infinity,
                 child: TextFormField(
-                  initialValue: todo.detail,
+                  initialValue: editData.detail,
                   onChanged: (value) => ref
                       .read(todoListNotifierProvider.notifier)
                       .save(editData.copyWith(detail: value)),

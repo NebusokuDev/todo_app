@@ -12,9 +12,12 @@ dependencies:
   flutter_riverpod:
   hooks_riverpod:
   riverpod_annotation:
-  shared_preferences:
   sqflite:
+  shared_preferences:
+  sqflite_common_ffi:
   path_provider:
+  path:
+
 
 dev_dependencies:
   flutter_test:

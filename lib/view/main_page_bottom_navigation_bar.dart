@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/generated/l10n.dart';
 
 class TodoInputField extends StatefulWidget {
   const TodoInputField({super.key, required this.onSubmitted});
@@ -36,8 +37,13 @@ class _TodoInputFieldState extends State<TodoInputField> {
           _controller.clear();
         },
         decoration: InputDecoration(
-          hintText: "create todo!",
-          border: InputBorder.none,
+          contentPadding: EdgeInsets.all(8),
+          isDense: true,
+          hintText: S.of(context).addTask,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide.none,
+          ),
           filled: true,
           prefixIcon: Icon(Icons.add),
           suffix: IconButton(

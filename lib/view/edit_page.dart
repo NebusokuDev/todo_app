@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo_app/generated/l10n.dart';
 import 'package:todo_app/model/todo.dart';
 import 'package:todo_app/provider/todo_list_notifier.dart';
 
@@ -46,8 +47,8 @@ class EditPage extends ConsumerWidget {
                       .save(editData.copyWith(detail: value)),
                   minLines: 50,
                   maxLines: 50,
-                  decoration: const InputDecoration(
-                    hintText: "detail input here!",
+                  decoration: InputDecoration(
+                    hintText: S.of(context).inputDetail,
                     border: InputBorder.none,
                   ),
                 ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_app/provider/theme_mode_notifier.dart';
 import 'package:todo_app/theme_data.dart';
 import 'package:todo_app/view/main_page.dart';
+
+import 'generated/l10n.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -16,6 +19,13 @@ class App extends ConsumerWidget {
       darkTheme: Brightness.dark.theme,
       themeMode: themeMode.value,
       home: const MainPage(),
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
     );
   }
 }
